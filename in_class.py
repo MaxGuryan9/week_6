@@ -31,5 +31,18 @@ df
 help(plt.scatter)
  
 # %%
+inertias = []
+k_values = range(1,10)
+for k in k_values:
+    kmeans = KMeans(n_clusters = k , random_state = 42)
+    kmeans.fit(c_num)
+    inertias.append(kmeans.inertia_)
 
 
+# %%
+plt.figure(figsize=(10,5))
+plt.plot(k_values, inertias, marker = "o")
+plt.xlabel('Number of Clusters (k)')
+plt.ylabel("Inertia")
+plt.show()
+# %%
