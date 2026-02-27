@@ -28,6 +28,5 @@ duplicates = merged_data[merged_data.duplicated(subset="Player", keep=False)]
 # to get the clust assignments for each data point after fitting the model
 
 # %%
-merged_data["Salary_in_thousands"] = merged_data["Salary"].apply(lambda x: x/1000)
 
-merged_data["High_Salary"] = merged_data["Salary_in_thousands"].apply(lambda x: True if x > 1000000 else False)
+    
